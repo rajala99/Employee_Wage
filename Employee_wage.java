@@ -5,16 +5,19 @@ public class Employee_wage {
         final int part_time_hours = 4;
         final int fullday_hours = 8;
         int pay = 0;
-        double employee = Math.floor(Math.random() * 10) % 3;
-        if (employee == 1) {
-            System.out.println(" Employee is full time");
-            pay = Wage_per_hours * fullday_hours;
-        } else if (employee == 2) {
-            System.out.println(" Employee is part time");
-            pay = Wage_per_hours * part_time_hours ;
-        } else {
-            System.out.println(" Employee is absent ");
+        int employee = (int) Math.floor(Math.random() * 10) % 3;
+        switch (employee) {
+            case 1:
+                System.out.println(" Employee is full time");
+                pay = Wage_per_hours * fullday_hours;
+                break;
+            case 2:
+                System.out.println(" Employee is part time");
+                pay = Wage_per_hours * part_time_hours;
+                break;
+            default:
+                System.out.println("Employee is absent");
         }
-        System.out.println("Employee daily wage is :" +pay);
+        System.out.println("Employee daily wage is :" + pay);
     }
 }
